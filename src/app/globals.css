@@ -19,4 +19,5 @@
 body {
   color: rgb(var(--foreground-rgb));
   background: white;
+  font-family: var(--font-outfit);
 }

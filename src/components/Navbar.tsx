@@ -2,7 +2,6 @@
 
 import React from "react";
 import logo from "../../public/bb_.png";
-import styles from "../styles/navbar.module.css";
 import { HiChevronDown } from "react-icons/hi";
 import { Twirl as Hamburger } from "hamburger-react";
 import { FaTwitter } from "react-icons/fa";
@@ -40,8 +39,8 @@ export const Navbar = () => {
   };
 
   return (
-    <nav className={"w-full bg-gt_purple  shadow-main fixed z-[400]"}>
-      <div className="container mx-auto w-full flex justify-between items-center py-[10px] px-4 md:px-[30px]">
+    <nav className={"w-full bg-transparent fixed z-[400]"}>
+      <div className="container mx-auto w-full flex justify-between items-center py-[30px] px-4 md:px-[30px]">
         <Link href={"/"} className={`flex items-center gap-2 no-underline`}>
           <Image
             src={logo}
@@ -52,43 +51,29 @@ export const Navbar = () => {
 
         <div className="" id="">
           <ul
-            className={`items-center list-none m-0 gap-1 font-montserrat font-semibold text-white hidden md:flex`}>
+            className={`items-center list-none m-0 gap-10 font-extrabold text-[20px] text-white mix-blend-multiply hidden md:flex`}>
             <li>
-              <Link
-                href="/"
-                className={`${styles.nav_link} ${
-                  pathname === "/" ? styles.active : ""
-                }`}>
-                Home
-              </Link>
-            </li>
-
-            <li>
-              <Link href="#" className={styles.nav_link}>
-                About Us
-              </Link>
-            </li>
-
-            <li>
-              <Link href="#" className={styles.nav_link}>
+              <Link href="#" className="">
                 Services
-              </Link>
-            </li>
-
-            <li>
-              <Link href="#" className={styles.nav_link}>
-                Portfolio
               </Link>
             </li>
 
             <li>
               <Link
                 href="/contact"
-                className={`${styles.nav_link} ${
-                  pathname === "/contact" ? styles.active : ""
-                }`}>
-                Contact us
+                className={`$"" ${pathname === "/contact" ? "" : ""}`}>
+                Contact
               </Link>
+            </li>
+            <li className="">
+              <Hamburger
+                toggled={isOpen}
+                toggle={setOpen}
+                label="Show menu"
+                rounded
+                easing="ease-in"
+                distance="md"
+              />
             </li>
           </ul>
         </div>
@@ -121,7 +106,7 @@ export const Navbar = () => {
               size={20}
             />{" "}
           </div>
-          <ul className="flex flex-col gap-5 py-4 items-start border-b border-[yellow] border-solid text-white font-semibold font-montserrat">
+          <ul className="flex flex-col gap-5 py-4 items-start border-b border-[yellow] border-solid text-white font-semibold">
             <li>
               <Link href={"/"} onClick={() => setOpen(false)}>
                 Home
@@ -129,19 +114,19 @@ export const Navbar = () => {
             </li>
 
             <li>
-              <Link href="#" className={styles.nav_link}>
+              <Link href="#" className="">
                 About Us
               </Link>
             </li>
 
             <li>
-              <Link href="#" className={styles.nav_link}>
+              <Link href="#" className="">
                 Services
               </Link>
             </li>
 
             <li>
-              <Link href="#" className={styles.nav_link}>
+              <Link href="#" className="">
                 Portfolio
               </Link>
             </li>
